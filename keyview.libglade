@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<glade-interface>
+  <!-- interface-requires gtk+ 2.16 -->
+  <!-- interface-naming-policy project-wide -->
+  <widget class="GtkWindow" id="window1">
+    <property name="modal">True</property>
+    <property name="window_position">mouse</property>
+    <property name="decorated">False</property>
+    <property name="destroy_with_parent">True</property>
+    <property name="type_hint">utility</property>
+    <property name="urgency_hint">True</property>
+    <property name="transient_for">fontselectiondialog1</property>
+    <property name="opacity">0.8</property>
+    <signal name="popup_menu" handler="handle-popup"/>
+    <child>
+      <widget class="GtkEventBox" id="eventbox1">
+        <property name="visible">True</property>
+        <signal name="button_press_event" handler="on_eventbox1_button_press_event"/>
+        <signal name="popup_menu" handler="on_eventbox1_popup_menu"/>
+        <child>
+          <widget class="GtkLabel" id="label1">
+            <property name="visible">True</property>
+            <property name="has_default">True</property>
+            <property name="events">GDK_POINTER_MOTION_MASK | GDK_STRUCTURE_MASK</property>
+            <property name="extension_events">cursor</property>
+            <property name="label" translatable="yes"></property>
+            <property name="use_markup">True</property>
+            <property name="wrap">True</property>
+            <property name="ellipsize">start</property>
+            <property name="width_chars">40</property>
+            <signal name="button_press_event" handler="button_handler" after="yes"/>
+            <signal name="key_press_event" handler="key_event"/>
+            <signal name="popup_menu" handler="popup_handler_2" after="yes"/>
+          </widget>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="GtkFontSelectionDialog" id="fontselectiondialog1">
+    <property name="border_width">5</property>
+    <property name="title" translatable="yes">Select OSD Font</property>
+    <property name="modal">True</property>
+    <property name="type_hint">normal</property>
+    <child internal-child="font_selection">
+      <widget class="GtkFontSelection" id="fontsel-font_selection1">
+        <property name="visible">True</property>
+        <property name="border_width">5</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">12</property>
+        <child>
+          <placeholder/>
+        </child>
+      </widget>
+    </child>
+    <child internal-child="cancel_button">
+      <widget class="GtkButton" id="fontsel-cancel_button1">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="can_default">True</property>
+        <property name="receives_default">True</property>
+        <property name="use_underline">True</property>
+        <property name="use_stock">True</property>
+      </widget>
+    </child>
+    <child internal-child="apply_button">
+      <widget class="GtkButton" id="fontsel-apply_button1">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="can_default">True</property>
+        <property name="receives_default">True</property>
+        <property name="use_underline">True</property>
+        <property name="use_stock">True</property>
+      </widget>
+    </child>
+    <child internal-child="ok_button">
+      <widget class="GtkButton" id="fontsel-ok_button1">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="can_default">True</property>
+        <property name="receives_default">True</property>
+        <property name="use_underline">True</property>
+        <property name="use_stock">True</property>
+      </widget>
+    </child>
+  </widget>
+  <widget class="GtkMenu" id="config-menu">
+    <property name="visible">True</property>
+  </widget>
+</glade-interface>
